@@ -1,0 +1,138 @@
+page-swipe {
+    background: #fff !important;
+    height: 100%;
+    .scroll-content {
+        display: flex;
+        flex-direction: column;
+        background-color: white !important;
+        .loading {
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            .spinner {
+                width: 78vmin;
+                height: 78vmin;
+                margin: auto;
+                position: relative;
+                .double-bounce1,
+                .double-bounce2 {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    background-color: rgba(red, 0.3);
+                    opacity: 0.6;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border: 3px solid red;
+                    -webkit-animation: sk-bounce 1.4s infinite ease-in-out;
+                    animation: sk-bounce 1.4s infinite ease-in-out;
+                }
+                .double-bounce2 {
+                    -webkit-animation-delay: -0.7s;
+                    animation-delay: -0.7s;
+                }
+                @-webkit-keyframes sk-bounce {
+                    0%,
+                    100% {
+                        -webkit-transform: scale(0.0)
+                    }
+                    50% {
+                        -webkit-transform: scale(1.0)
+                    }
+                }
+                @keyframes sk-bounce {
+                    0%,
+                    100% {
+                        transform: scale(0.5);
+                        -webkit-transform: scale(0.5);
+                        opacity: 0.5;
+                    }
+                    50% {
+                        transform: scale(1.0);
+                        -webkit-transform: scale(1.0);
+                        opacity: 0;
+                    }
+                }
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 50%;
+                    height: 28vmin;
+                    width: 28vmin;
+                }
+            }
+            .label {
+                text-align: center;
+                font-size: 2.2rem;
+                color: $color1;
+            }
+        }
+    }
+    #card-stack {
+        width: 100%;
+        height: 85%;
+        background: #fff;
+        position: relative;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        .overlay {
+            width: 100%;
+            height: 25%;
+            padding: 16px;
+            position: absolute;
+            bottom: 0px;
+            background: rgba(66, 66, 66, 0.22);
+            color: $white;
+            .card-title {
+                .name {
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: $white;
+                }
+                .job-title {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: $white;
+                }
+            }
+        }
+        ion-card {
+            border-radius: 5px;
+            position: absolute;
+            text-align: left;
+            top: 3%;
+            height: 90%;
+        }
+    }
+    .buttons {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        z-index: 1;
+        .button-container {
+            text-align: center;
+            button {
+                background-color: white;
+                font-size: 2.4rem;
+                padding: 0px;
+                width: 7rem;
+                height: 7rem;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                &.refresh {
+                    width: 5rem;
+                    height: 5rem;
+                }
+                &.super-like {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- SignIn/Login Page -->
+
+<ion-content>
+  <div class="background" text-center>
+
+    <!-- Title Of Page  -->
+    <div class="title animated fadeInDown">
+      <p><img src="assets/imgs/EROSJPG.png" height="150 px" width="250 px"></p>
+    </div>
+
+    <!-- Main Body -->
+    <div class="signin-form animated zoomIn" padding>
+
+      <!-- SignIn Form  -->
+      <form>
+        <ion-list>
+
+          <!-- Email -->
+          <ion-item>
+            <ion-label>
+              <ion-icon name="md-mail" color="color3"></ion-icon>
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="newTask" placeholder="{{'USERNAME'|translate:param}}" name="email" ></ion-input>
+          </ion-item>
+
+          <!-- Password -->
+          <ion-item>
+            <ion-label>
+              <ion-icon name="md-eye" color="color3"></ion-icon>
+            </ion-label>
+            <ion-input type="password" placeholder="{{'PASSWORD'|translate}}" name="password" [(ngModel)]="Password"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-label>
+          {{Errors}}
+        </ion-label>
+
+
+        <!-- SignIn Button -->
+        <div class="buttons animated fadeInUp">
+          <button ion-button type="button" color="color3" ion-button round full (click)="goToProfile(newTask,Password)">
+            {{'SIGN IN'|translate}}
+          </button>
+        </div>
+      </form>
+
+
+      <!-- Sign Up Page Button Option -->
+      <button ion-button color="color7" clear (click)="goToSignUpPage()">
+        <strong>{{'NEW HERE?'|translate}} {{'SIGN UP'|translate}}</strong>
+      </button>
+
+      <br>
+
+      <!-- Landing Page Button Option -->
+      <button ion-button clear color="color7" (tap)="goToLandingPage()">{{'BACK'|translate}}</button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,48 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- User Details Page -->
+
+<ion-content>
+
+  <!-- User Images  -->
+  <div class="image-container">
+    <img [src]="image">
+
+    <!-- Back/Dismiss Button  -->
+    <button ion-button icon-only round color="background" (tap)="dismiss()">
+      <ion-icon name="md-arrow-down" color="light"></ion-icon>
+    </button>
+  </div>
+
+  <!-- User Profile Actions  -->
+  <ion-fab top right (click)="actions($event)">
+    <button ion-fab mini color="light"><ion-icon name="md-more"></ion-icon></button>
+  </ion-fab>
+
+  <!-- User Name & Age  -->
+  <div class="section profile-info">
+    <div class="name">{{userInfo.Username}}, {{userInfo.Age}}</div>
+  </div>
+
+
+  <!-- Action Buttons  -->
+  <div class="buttons">
+
+    <!-- Dislike Button  -->
+    <div class="button-container">
+      <button ion-button icon-only round class="dislike" (click)="dismiss()">
+        <ion-icon  name="thumbs-down"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Like Button  -->
+    <div class="button-container">
+      <button ion-button icon-only round class="like" (click)="dismiss()">
+        <ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </div>
+  </div>
+</ion-content>

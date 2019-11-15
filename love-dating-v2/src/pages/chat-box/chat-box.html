@@ -1,0 +1,64 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- Chat Box Contents -->
+
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+    <ion-buttons start>
+      <button ion-button color="color1" clear (tap)="dismiss()">
+      <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title color="color1">Chat</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Contents  -->
+<ion-content #content>
+
+  <!-- Chat Messages  -->
+  <div class="message-container">
+    <div *ngFor="let chat of chats" class="message" [ngClass]="chat.status== 'sent' ? 'left' : 'right'">
+      <div class="msg-detail">
+        <div class="msg-info">
+          <p>
+            <span *ngIf="chat.status == 'sent'">{{chat.senderName}}</span>
+            <span *ngIf="chat.status == 'received'">{{chat.senderName}}</span> &nbsp;&nbsp;&nbsp;{{chat.timestamp | date}}
+          </p>
+        </div>
+        <div class="msg-content">
+          <p>{{chat.message}}</p>
+          <img *ngIf="chat.image" [src]="chat.image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</ion-content>
+<!-- End Contents  -->
+
+<!-- Footer  -->
+<ion-footer no-border>
+  <ion-grid>
+    <ion-row>
+     
+      <!-- Message Input Box  -->
+      <ion-col col-10>
+        <form [formGroup]="chatForm">
+          <ion-item no-lines no-padding>
+            <ion-textarea type="text" formControlName="message" placeholder="Type anything..." autocorrect="off" autocapitalize="none"
+              required (ionFocus)="onMessageInputFocus()" (keyup.enter)="sendMsg()"></ion-textarea>
+            <button ion-button item-right clear color="color1" [disabled]="!chatForm.valid" (click)="sendMsg()">Send</button>
+          </ion-item>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+<!-- End Footer  -->

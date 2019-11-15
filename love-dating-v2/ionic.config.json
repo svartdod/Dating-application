@@ -1,0 +1,7 @@
+{
+  "name": "love-dating-v2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

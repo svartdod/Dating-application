@@ -1,0 +1,101 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- User Edit Profile Page -->
+
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+
+    <!-- Buttons  -->
+    <ion-buttons start>
+      <button ion-button color="color1" clear (tap)="dismiss(school)">
+        <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- Page Title  -->
+    <ion-title color="color1">{{'Edit Profile'|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Content  -->
+<ion-content>
+  <!-- Profile Photo Section  -->
+  <div class="photos-section">
+    <ion-grid>
+      <ion-row>
+        <!-- Photo One  -->
+        <ion-col col-12 class="col1">
+          <h4 *ngIf="!img1" class="custom-text">1</h4>
+          <img *ngIf="img1" src="https://firebasestorage.googleapis.com/v0/b/love-dating-3dc0b.appspot.com/o/Images_profile%2F{{profile_data?.Images}}.jpg?alt=media&token=6d0e7c26-753f-4eec-a456-a7d0381e7afb">
+          <button icon-only class="bottom-right" (click)="takePhoto(1)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+        </ion-col>
+
+      
+      </ion-row>
+
+
+
+    </ion-grid>
+  </div>
+
+  <!-- Smart Photos Option  -->
+
+
+  <!-- Profile Information  -->
+  <ion-list inset no-lines color="color7">
+
+    <!-- About 
+
+    <p><b>About Tom {{profile_data?.Name}}</b></p>
+    <ion-item no-padding>
+      <ion-input type="text" placeholder="About You" name="about" [(ngModel)]="about" [ngModelOptions]="{standalone: true}" ></ion-input>
+    </ion-item>
+
+    <p><b>Job Title</b></p>
+    <ion-item no-padding>
+      <ion-input type="text" placeholder="Add Job Title" name="job" [(ngModel)]="job" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+
+    <p><b>Company</b></p>
+    <ion-item no-padding>
+      <ion-input type="text" placeholder="Add Company" name="comp" [(ngModel)]="comp" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+
+    <p><b>School</b></p>
+    <ion-item no-padding>
+      <ion-input type="text" placeholder="Add School" name="school" [(ngModel)]="school" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+
+    <p><b>Show my Instagram Photos</b></p>
+    <ion-item no-padding>
+      <button ion-button color="color3" clear>Connect Instagram</button>
+    </ion-item> -->
+
+    <!-- Gender  -->
+    <p><b>{{'Gender'|translate}}</b></p>
+    <ion-list radio-group no-padding name="school" [(ngModel)]="school" [ngModelOptions]="{standalone: true}" >
+      <ion-item>
+        <ion-label>{{'Man'|translate}}</ion-label>
+        <ion-radio color="color3"  value="Male"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{'Women'|translate}}</ion-label>
+        <ion-radio color="color3" checked   value="Female"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <!-- Control Your Profile  -->
+    <p><b>{{'Control Your Profile'|translate}}</b></p>
+    <ion-item>
+      <ion-label color="color7">{{'Dont Show My Age'|translate}}</ion-label>
+      <ion-toggle checked="true" color="color3"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<!-- End Content  -->

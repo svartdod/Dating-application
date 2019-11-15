@@ -1,0 +1,202 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- SignUp/Registration Page -->
+
+<ion-content text-center>
+    <!-- All the SignUp form contents added in Slider  -->
+    <ion-slides>
+  
+      <!-- Slider One  -->
+      <!-- SignUp Form Step One  -->
+      <!-- Select user Gender and option to go in next slider -->
+      <ion-slide>
+        <div class="main-body">
+          <div class="section-one">
+            <div class="field-title">Hey! You're ...</div>
+          </div>
+          <div class="section-two">
+            <ion-grid>
+              <ion-row text-center>
+                <ion-col col-6>
+                  <ion-row (tap)="gender = 'male'" (click)="step_zrax()" >
+                    <ion-col col-12>
+                      <ion-icon name="man" style="zoom:4.0;" [color]="gender == 'Male' ? 'color3' : 'light'"></ion-icon>
+                    </ion-col>
+                    <ion-col col-12>
+                      <button ion-button [color]="gender == 'Male' ? 'color3' : 'light'">{{'MALE'|translate}}</button>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+                <ion-col col-6>
+                  <ion-row (tap)="gender = 'female'" (click)="step_zina()" >
+                    <ion-col col-12>
+                      <ion-icon name="woman" style="zoom:4.0;" [color]="gender == 'Female' ? 'color3' : 'light'"></ion-icon>
+                    </ion-col>
+                    <ion-col col-12>
+                      <button ion-button [color]="gender == 'Female' ? 'color3' : 'light'">{{'FEMALE'|translate}}</button>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div class="section-three">
+            <ion-list>
+              <div class="button-option animated fadeInUp" padding-left padding-right>
+                <button ion-button round full color="color3" (click)="step2()">{{'GO'|translate}}</button>
+                <button ion-button clear color="color7" (tap)="goToLandingPage()">{{'BACK'|translate}}</button>
+              </div>
+            </ion-list>
+          </div>
+        </div>
+      </ion-slide>
+      <!-- End Slider One  -->
+  
+      <!-- Slider Two  -->
+      <!-- Signup Form Step Two-->
+      <!-- Fill up username, email, date of birth and option to go in next slider -->
+      <ion-slide>
+        <div class="background" text-center>
+  
+          <div class="title animated fadeInDown">
+            <p>My Email is ...</p>
+          </div>
+  
+          <!-- Main Body -->
+          <div class="main-body animated zoomIn" padding>
+            <form class="form" [formGroup]="validations_form">
+              <ion-list>
+  
+                <!-- User Name -->
+                <ion-item>
+                  <ion-label>
+                    <ion-icon name="person" color="color3"></ion-icon>
+                  </ion-label>
+                  <ion-input type="text" placeholder="{{'USERNAME'|translate}}" name="username" [(ngModel)]="username"  formControlName="username" class="form-controll" ></ion-input>
+                </ion-item>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.username">
+                    <div class="error-message" *ngIf="validations_form.get('username').hasError(validation.type) && (validations_form.get('username').dirty || validations_form.get('username').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+  
+                <!-- Email -->
+                <ion-item>
+                  <ion-label>
+                    <ion-icon name="md-mail" color="color3"></ion-icon>
+                  </ion-label>
+                  <ion-input type="email" placeholder="{{'EMAIL'|translate}}" name="email" [(ngModel)]="email" formControlName="email" class="form-controll" ></ion-input>
+                </ion-item>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.email">
+                    <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+  
+                <!-- Date  -->
+                <ion-item>
+                  <ion-label padding-left>
+                    <ion-icon name="md-calendar" color="color3"></ion-icon>
+                  </ion-label>
+                  <ion-datetime displayFormat="DDDD MMM, YYYY" placeholder="{{'MYBIRTHDAY'|translate}}" [(ngModel)]="bd" formControlName="date" class="form-controll"></ion-datetime>
+                </ion-item>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.date">
+                    <div class="error-message" *ngIf="validations_form.get('date').hasError(validation.type) && (validations_form.get('date').dirty || validations_form.get('date').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </ion-list>
+  
+              <div class="buttons animated fadeInUp">
+                <button ion-button type="button" color="color3"  [disabled]="!validations_form.valid" ion-button round full (click)="step3()">
+                  {{'GO'|translate}}
+                </button>
+              </div>
+            </form>
+  
+            <!-- Sign In Page Button Option -->
+            <button ion-button color="color7" clear (click)="goToSignInPage()">
+              <strong>{{'ALREADYHAVEANACCOUNT?'|translate}} {{'SIGNIN'|translate}}</strong>
+            </button>
+            <!-- Landing Page Button Option  -->
+            <button ion-button clear color="color7" (tap)="goToLandingPage()">{{'BACK'|translate}}</button>
+          </div>
+        </div>
+      </ion-slide>
+      <!-- End Slider Two  -->
+  
+      <!-- Slider Three  -->
+      <!-- Signup Form Step Three -->
+      <!-- Fill up Password -->
+      <ion-slide>
+        <div class="background" text-center>
+  
+          <div class="title animated fadeInDown">
+            <p>My Password is...</p>
+          </div>
+  
+          <!-- Main Body -->
+          <div class="main-body animated zoomIn" padding>
+            <form class="form" [formGroup]="matching_passwords_group">
+              <ion-list>
+                <!-- Password -->
+                <ion-item>
+                  <ion-label>
+                    <ion-icon name="md-eye" color="color3"></ion-icon>
+                  </ion-label>
+                  <ion-input type="password"  placeholder="{{'PASSWORD'|translate}}" name="password" [(ngModel)]="password" formControlName="password" class="form-controll"></ion-input>
+                </ion-item>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.password">
+                    <div class="error-message" *ngIf="matching_passwords_group.get('password').hasError(validation.type) && (matching_passwords_group.get('password').dirty || matching_passwords_group.get('password').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+  
+                <!-- Confirm Password -->
+                <ion-item>
+                  <ion-label>
+                    <ion-icon name="md-eye" color="color3"></ion-icon>
+                  </ion-label>
+                  <ion-input type="password" placeholder="{{'PASSWORDCONFIRMED'|translate}}" name="confirm_password" formControlName="confirmPassword" class="form-controll"></ion-input>
+                </ion-item>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.password">
+                    <div class="error-message" *ngIf="matching_passwords_group.get('confirmPassword').hasError(validation.type) && (matching_passwords_group.get('confirmPassword').dirty || matching_passwords_group.get('confirmPassword').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+  
+              </ion-list>
+  
+  
+              <!-- Sign Up Button -->
+              <div class="buttons animated fadeInUp">
+                <button ion-button type="button" color="color3"  [disabled]="!matching_passwords_group.valid" ion-button round full (click)="goToProfile(username,password,email,bd)">
+                  {{'SIGNUP'|translate}}
+                </button>
+              </div>
+            </form>
+  
+            <!-- Sign In Button-->
+            <button ion-button color="color7" clear (click)="goToSignInPage()">
+              <strong>{{'ALREADYHAVEANACCOUNT?'|translate}} {{'SIGNIN'|translate}}</strong>
+            </button>
+            <button ion-button clear color="color7" (tap)="goToLandingPage()">{{'BACK'|translate}}</button>
+          </div>
+        </div>
+      </ion-slide>
+      <!-- End Slider Three  -->
+    </ion-slides>
+  </ion-content>

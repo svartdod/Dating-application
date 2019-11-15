@@ -1,0 +1,19 @@
+page-matches {
+    .swiper-slide img {
+        height: 60px !important;
+        width: 60px;
+        border-radius: 50%;
+    }
+    ion-slides {
+        height: auto;
+    }
+    img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .custom-title {
+        font-size: 16px;
+        color: $color3;
+        font-weight: bold;
+    }
+}

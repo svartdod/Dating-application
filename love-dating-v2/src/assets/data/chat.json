@@ -1,0 +1,69 @@
+{
+    "Chat": [
+        {
+            "id": 1,
+            "senderName": "Alidia Parks",
+            "receiverName": "Tom Cruise",
+            "message": "Hey Cruise, How are you?",
+            "status": "sent",
+            "timestamp": "2018-03-24T19:28:59+00:00"
+        },
+        {
+            "id": 2,
+            "senderName": "Tom Cruise",
+            "receiverName": "Alidia Parks",
+            "message": "Hi Alidia, Yeah I'm Fine",
+            "status": "received",
+            "timestamp": "2018-03-25T19:28:59+00:00"
+        },
+        {
+            "id": 3,
+            "senderName": "Alidia Parks",
+            "receiverName": "Tom Cruise",
+            "message": "Excelent! What's your planning today?",
+            "status": "sent",
+            "timestamp": "2018-03-27T19:28:59+00:00"
+        },
+        {
+            "id": 4,
+            "senderName": "Tom Cruise",
+            "receiverName": "Alidia Parks",
+            "message": "Wanna grab a coffee?",
+            "status": "received",
+            "timestamp": "2018-03-27T19:28:59+00:00"
+        },
+        {
+            "id": 5,
+            "senderName": "Alidia Parks",
+            "receiverName": "Tom Cruise",
+            "message": "Absolutely, Lets do it",
+            "image": "https://media.giphy.com/media/e71MPsvTU7L0s/giphy.gif",
+            "status": "sent",
+            "timestamp": "2018-03-28T19:28:59+00:00"
+        },
+        {
+            "id": 6,
+            "senderName": "Tom Cruise",
+            "receiverName": "Alidia Parks",
+            "message": "Tomorrow?",
+            "status": "received",
+            "timestamp": "2018-03-28T19:28:59+00:00"
+        },
+        {
+            "id": 7,
+            "senderName": "Alidia Parks",
+            "receiverName": "Tom Cruise",
+            "message": "Oh Sure",
+            "status": "sent",
+            "timestamp": "2018-03-29T19:28:59+00:00"
+        },
+        {
+            "id": 8,
+            "senderName": "Tom Cruise",
+            "receiverName": "Alidia Parks",
+            "message": "OK",
+            "status": "received",
+            "timestamp": "2018-03-29T19:28:59+00:00"
+        }
+    ]
+}

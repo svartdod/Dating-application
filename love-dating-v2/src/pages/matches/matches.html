@@ -1,0 +1,41 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- User Matches Page -->
+
+<ion-content padding>
+
+  <!-- Search Input Box  -->
+  <ion-searchbar></ion-searchbar>
+
+  <!-- Slider of New Matches  -->
+  <p class="custom-title">New Matches</p>
+  <ion-slides slidesPerView="1" class="animated slideInLeft" loop="true" effect="slide" autoplay="4000" *ngIf="matches_user && matches_user.length > 0">
+    <ion-slide *ngFor="let matche of matches_user">
+      <ion-grid (click)="openChatBox()">
+        <ion-row>
+          <ion-col>
+            <img src="{{Image}} "  >
+            <div>
+              <button ion-button clear color="color1">{{matche.Username}}</button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- List of all Users  -->
+  <p class="custom-title">{{'Messages'|translate}}</p>
+  <ion-list>
+    <ion-item no-lines *ngFor="let user of users" (click)="openChatBox(user)">
+      <ion-avatar item-start>
+        <img src="{{Image}} "  >
+      </ion-avatar>
+      <h2>{{user.Username}}</h2>
+      <p>{{user.Age}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

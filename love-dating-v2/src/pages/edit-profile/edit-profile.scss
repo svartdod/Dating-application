@@ -1,0 +1,57 @@
+page-edit-profile {
+    height: 100%;
+    .photos-section {
+        background: rgba(244, 244, 244, 0.46);
+        .grid {
+            padding: 13px;
+            .custom-text {
+                line-height: 0;
+                color: #fff;
+                font-size: 24px;
+                text-shadow: -1px 0 #b2b2b2, 0 2px #c1c1c1, 3px 0 #c1c1c1, 0 2px #c1c1c1;
+                padding-left: 4px;
+                padding-top: 4px;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+            }
+            .col {
+                padding: 0px !important;
+                margin-left: 10px;
+            }
+            .col1 {
+                background: rgba(243, 237, 237, 0.47);
+                height: 222px;
+                border: 1px solid #e0e0e0;
+                margin-left: 10px;
+                box-shadow: 0 10px 6px -8px #777;
+            }
+            .col2 {
+                margin-bottom: 20px;
+                background: rgba(243, 237, 237, 0.47);
+                height: 100px;
+                border: 1px solid #e0e0e0;
+                box-shadow: 0 10px 6px -8px #777;
+            }
+            button {
+                padding: 0;
+                margin: 0;
+                background: $color3;
+                border-radius: 50%;
+                width: 22px;
+                height: 22px;
+                ion-icon {
+                    padding: 0;
+                    font-weight: bold;
+                    margin-top: 2px;
+                }
+            }
+            .bottom-right {
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+            }
+        }
+    }
+}

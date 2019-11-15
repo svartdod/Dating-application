@@ -1,0 +1,33 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- Match Page -->
+
+<ion-content padding>
+  <div class="title">
+    {{'Its a Match!'|translate}}
+  </div>
+
+  <div class="sub-title">
+    {{'You are liking'|translate}}
+    <p class="name">{{userInfo.Name}}.</p>
+  </div>
+
+  <!-- User Image Section  -->
+  <div class="images">
+    <div class="person">
+      <img [src]="images[0]">
+    </div>
+    <div class="person">
+      <img [src]="images[1]">
+    </div>
+  </div>
+
+  <!-- Buttons  -->
+  <div class="buttons">
+    <button ion-button block round (click)="goToChatPage()">{{'Send a message'|translate}}</button>
+    <button ion-button block round class="cancel" (click)="dismiss()">{{'Keep swiping'|translate}}</button>
+  </div>
+</ion-content>

@@ -1,0 +1,132 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- Settings Page -->
+
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+
+    <!-- Buttons  -->
+    <ion-buttons start>
+      <button ion-button color="color1" clear (tap)="dismiss()">
+        <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- Title of Page  -->
+    <ion-title color="color1">Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- End Header  -->
+
+<!-- COntent  -->
+<ion-content padding>
+  <!-- Show Me (Man/Women) Options  -->
+  <ion-card>
+    <ion-card-header color="color1">
+      {{'Show Me'|translate}}
+      <p text-right>
+        <span *ngIf="man" right>Man</span>
+        <span *ngIf="man && women" right>,</span>
+        <span *ngIf="women"> Women</span>
+      </p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label> Man</ion-label>
+        <ion-toggle color="color1" [(ngModel)]="man" (ionChange)="change()"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label> Women</ion-label>
+        <ion-toggle color="color1" [(ngModel)]="women" (ionChange)="change()"></ion-toggle>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Maximum Distance Option -->
+  <ion-card>
+    <ion-card-header color="color1">
+      {{'Maximum Distance'|translate}}
+      <p text-right>
+        <span *ngIf="distance" right>{{distance}} km.</span>
+      </p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-range color="color1" [(ngModel)]="distance"  min="0" max="50" step="1" ></ion-range>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Age Range  -->
+  <ion-card>
+    <ion-card-header color="color1">
+      {{'Age Range'|translate}}
+      <p text-right>
+        <span *ngIf="ages" right>{{ages.lower}}-{{ages.upper}}</span>
+      </p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-range color="color1" dualKnobs="true" [(ngModel)]="ages" min="18" max="99" debounce="500" pin="true"></ion-range>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <!-- App Settings -->
+  
+  <!-- Contact Us  -->
+  <h4>{{'Contact Us'|translate}}</h4>
+  <ion-card>
+    <ion-card-header text-center>
+        {{'Help & Support'|translate}}
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Others  -->
+  <ion-card>
+    <ion-item>
+        {{'Share Hoop'|translate}}
+    </ion-item>
+    <ion-item>
+        {{'Restore Purchase'|translate}}
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header color="color1">
+        {{'Legal'|translate}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+          {{'Licenses'|translate}}
+      </ion-item>
+      <ion-item>
+          {{'Privcy Policy'|translate}}
+      </ion-item>
+      <ion-item>
+          {{'Terms of Service'|translate}}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Logout  -->
+  <ion-card (tap)="logout()">
+    <ion-card-header text-center>
+        {{'Logout'|translate}}
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Delete Account  -->
+  <ion-card (tap)="block()">
+    <ion-card-header text-center color="color1">
+        {{'Delete Account'|translate}}
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

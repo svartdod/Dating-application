@@ -1,0 +1,30 @@
+page-landing {
+    .background {
+        height: 100%;
+        .logo-contents {
+            height: 70%;
+            img {
+                width: 200px;
+                padding-top: 15%;
+            }
+            h1 {
+                color: #343434;
+            }
+            .heading {
+                font-size: 26px;
+                font-weight: bold;
+                color: #333;
+            }
+            .subheading {
+                color: #343434;
+                font-size: 20px;
+            }
+        }
+        .button-option {
+            height: 30%;
+            .custom-btn {
+                margin-top: 20%;
+            }
+        }
+    }
+}
