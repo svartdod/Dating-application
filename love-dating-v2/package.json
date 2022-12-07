@@ -35,7 +35,7 @@
     "angular2-swing": "^0.14.0",
     "cordova-admob-sdk": "^0.16.0",
     "cordova-android": "7.0.0",
-    "cordova-browser": "5.0.4",
+    "cordova-browser": "6.0.0",
     "cordova-ios": "4.5.5",
     "cordova-plugin-admob-free": "^0.16.2",
     "cordova-plugin-camera": "^4.0.3",
